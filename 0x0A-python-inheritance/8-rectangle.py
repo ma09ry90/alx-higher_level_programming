@@ -1,15 +1,25 @@
 #!/usr/bin/python3
-"""Contains a class that inherits from `BaseGeometry"""
+"""[Write a class Rectangle that inherits from
+ BaseGeometry (7-base_geometry.py).]"""
+
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Inherits from `BaseGeometry `"""
+    """[class Rectangle that inherits from BaseGeometry]
 
+    Arguments:
+        BaseGeometry {[type]} -- [Base geometry super class]
+    """
     def __init__(self, width, height):
-        """Initialize rectangle value"""
+        """[Instantiation with width and height]
+
+        Arguments:
+            width {[int]} -- [must beprivate and positve integer]
+            height {[int]} -- [must beprivate and positve integer]
+        """
         self.integer_validator("width", width)
-        self.__width = width
         self.integer_validator("height", height)
+        self.__width = width
         self.__height = height
