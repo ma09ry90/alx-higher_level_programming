@@ -1,18 +1,39 @@
 #!/usr/bin/python3
-"""Contains a class `MyInt` that inherits from `int`"""
+""" [Write a class MyInt that inherits from int] """
 
 
 class MyInt(int):
-    """Inherits from int base class"""
-    def __init__(self, value):
-        """Initialize value"""
-        self.value = value
+    """[MyInt]
 
-    def __ne__(self, x):
-        """not equal to comparison"""
-        if self.value is x:
-            return True
+    Arguments:
+        int {[class]} -- [superclass int]
+    """
+    def __init__(self, x):
+        """[constructor]
 
-    def __eq__(self, x):
-        """equal to comparison"""
-        return not self.__ne__(x)
+        Arguments:
+            x {[int]} -- [value]
+        """
+        self.x = x
+
+    def __eq__(self, other):
+        """[equality changed]
+
+        Arguments:
+            other {[type]} -- [description]
+
+        Returns:
+            [bool] -- [contrary boolean]
+        """
+        return (self.x != other)
+
+    def __ne__(self, other):
+        """[inequality changed]
+
+        Arguments:
+            other {[type]} -- [description]
+
+        Returns:
+            [bool] -- [contrary boolean]
+        """
+        return (self.x == other)
