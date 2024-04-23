@@ -174,4 +174,4 @@ class TestRectangle(unittest.TestCase):
         """tests for pep8"""
         p8 = pep8.StyleGuide(quiet=True)
         p = p8.check_files(['tests/test_models/test_base.py'])
-        self.assertEqual(p.total_errors, 0, "fix pep8")`
+        self.assertEqual(p.total_errors, 0, "fix pep8")
