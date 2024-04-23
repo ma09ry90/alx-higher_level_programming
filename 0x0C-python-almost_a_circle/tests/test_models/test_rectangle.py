@@ -90,7 +90,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(string2,
             "[Rectangle] (1) 1/0 - 5/5")
 
-    def test_dis    play_xy(self):
+    def test_display_xy(self):
         """checks display xy"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(2, 3, 2, 2)
@@ -160,9 +160,9 @@ class TestRectangle(unittest.TestCase):
         Base._Base__nb_objects = 0
         r1 = Rectangle(1, 1, 1, 1)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-        r1.width = None
+            r1.width = None
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-        r1.width = ""
+            r1.width = ""
 
     def test_pep8_model(self):
         """tests for pep8"""
