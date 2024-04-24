@@ -1,61 +1,38 @@
-A test to for adding two inteter
-
-Import Python module + collections
->>> import sys
->>> sys.path.insert(1, '../')
->>> lib = __import__("0-add_integer")
->>> add_integer = lib.add_integer
-
-# Normal addition test
->>> add_integer(0)
+>>> add_integer = __import__("0-add_integer").add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
 98
->>> add_integer(-1)
-97
->>> add_integer(10.5)
-108
-
-# Type Errors
->>> add_integer(10+5j)
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98
+>>> add_integer()
 Traceback (most recent call last):
-...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer('t', 3)
+Traceback (most recent call last):
 TypeError: a must be an integer
->>> add_integer([])
+>>> add_integer(s, 1)
 Traceback (most recent call last):
-...
-TypeError: a must be an integer
->>> add_integer({})
+NameError: name 's' is not defined
+>>> add_integer(.3)
+98
+>>> add_integer(-100.3)
+-2
+>>> add_integer(.999999999999999, .999999999999999999)
+1
+>>> add_integer(.33333333333333, .9999999999999999)
+0
+>>> add_integer(float('nan'), 2)
 Traceback (most recent call last):
-...
-TypeError: a must be an integer
->>> add_integer(set())
+ValueError: cannot convert float NaN to integer
+>>> add_integer(float('inf'), 2)
 Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
->>> add_integer("")
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(-float('inf'), 2)
 Traceback (most recent call last):
-...
-TypeError: a must be an integer
-
-# Two input addition type errors
->>> add_integer(10, 10+5j)
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(2, float('inf'))
 Traceback (most recent call last):
-...
-TypeError: b must be an integer
->>> add_integer(10, [])
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
->>> add_integer(10, {})
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
->>> add_integer(10, set())
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
-
->>> add_integer(10, "")
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
+OverflowError: cannot convert float infinity to integer
