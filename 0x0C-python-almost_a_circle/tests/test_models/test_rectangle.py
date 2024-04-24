@@ -147,13 +147,12 @@ class TestRectangle(unittest.TestCase):
         string = r1.__str__()
         self.assertEqual(string, "[Rectangle] (89) 1/3 - 4/2")
 
-    def test_dictionary(self):
-        """checks dictionary conversion"""
-        Base._Base__nb_objects = 0
+    def test_to_dictionary(self):
         r1 = Rectangle(10, 2, 1, 9)
-        r1_dictionary = r1.to_dictionary()
-        a_dict = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
-        self.assertTrue(r1_dictionary == a_dict)
+        r1_dict = r1.to_dictionary()
+        expected = {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
+        self.assertEqual(r1_dict, expected)
+
 
     def test_empty(self):
         """check empty arguments"""
