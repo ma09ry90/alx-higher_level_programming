@@ -1,40 +1,33 @@
-A test to for the text_indenation function
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("tomato     .   ,,,,/\?00")
+tomato     .
+<BLANKLINE>
+,,,,/\?
+<BLANKLINE>
+00
+>>> text_indentation("....")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation("")
 
-Import the module
->>> import sys
->>> sys.path.insert(1, '../')
->>> lib = __import__("5-text_indentation")
->>> func = lib.text_indentation
-
-#Normal addition test
->>> func("Lorem Ipsum.?:")
-Lorem Ipsum.
+>>> text_indentation(" .? ")
+.
 <BLANKLINE>
 ?
 <BLANKLINE>
-:
+>>> text_indentation("     .     . ")
+.
 <BLANKLINE>
+.
+<BLANKLINE>
+>>> text_indentation("  ")
 
-
-#Type Errors
-
->>> func(4)
+>>> text_indentation(""")
 Traceback (most recent call last):
-...
-TypeError: text must be string
->>> func(12.3)
-Traceback (most recent call last):
-...
-TypeError: text must be string
->>> func([])
-Traceback (most recent call last):
-...
-TypeError: text must be string
->>> func({})
-Traceback (most recent call last):
-...
-TypeError: text must be string
->>> func(1j)
-Traceback (most recent call last):
-...
-TypeError: text must be string
+SyntaxError: EOF while scanning triple-quoted string literal
