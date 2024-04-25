@@ -76,7 +76,7 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = old_stdout
         result_string = result.getvalue()
         self.assertEqual(result_string,
-            "####\n####\n####\n####\n####\n####\n")
+                         "####\n####\n####\n####\n####\n####\n")
 
     def test_str(self):
         """checks str"""
@@ -86,9 +86,9 @@ class TestRectangle(unittest.TestCase):
         string1 = r8.__str__()
         string2 = r9.__str__()
         self.assertEqual(string1,
-            "[Rectangle] (12) 2/1 - 4/6")
+                         "[Rectangle] (12) 2/1 - 4/6")
         self.assertEqual(string2,
-            "[Rectangle] (1) 1/0 - 5/5")
+                         "[Rectangle] (1) 1/0 - 5/5")
 
     def test_display_xy(self):
         """checks display xy"""
@@ -147,12 +147,13 @@ class TestRectangle(unittest.TestCase):
         string = r1.__str__()
         self.assertEqual(string, "[Rectangle] (89) 1/3 - 4/2")
 
-    def test_to_dictionary(self):
+    def test_dictionary(self):
+        """checks dictionary conversion"""
+        Base._Base__nb_objects = 0
         r1 = Rectangle(10, 2, 1, 9)
-        r1_dict = r1.to_dictionary()
-        expected = {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
-        self.assertEqual(r1_dict, expected)
-
+        r1_dictionary = r1.to_dictionary()
+        a_dict = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        self.assertTrue(r1_dictionary == a_dict)
 
     def test_empty(self):
         """check empty arguments"""
