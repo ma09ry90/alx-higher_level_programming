@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <python.h>
 
 /**
  * struct listint_s - singly linked list
@@ -23,5 +24,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 int check_pal(listint_t **head, listint_t *last);
 int is_palindrome(listint_t **head);
+def print_list_integer(my_list=[]);
 
 #endif /* LISTS_H */
